@@ -12,7 +12,7 @@
       <i class="fa fa-info"></i>
     </div>
     
-    <div id="keep" onclick="window.open('manual.html','_self')">
+    <div id="keep" onclick="goManual();">
       <i class="fa fa-table"></i>
     </div>
     
@@ -346,6 +346,7 @@ function processFrame() {
                     used[i] ^= m;
                     used[9+j] ^= m;
                     used[18+b] ^= m;
+                    stackData(data);
                 }
 
                 function solver() {
@@ -430,6 +431,17 @@ run.onclick = ()=>{
 };
 
 run.onclick();
+
+var stackedData;
+
+function stackData(data) {
+    stackedData=data.toString();
+}
+
+function goManual() {
+    window.open('manual.html?data='+stackedData,'_self');
+
+}
 
     </script>
   </body>
